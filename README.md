@@ -1,5 +1,5 @@
 ## Summary of INU classes
- - Second semester of third grade
+ - Second semester of third grade (3-2)
 
   |Class | Abstract | Grade|
   |------|---|---|
