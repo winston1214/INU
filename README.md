@@ -8,3 +8,9 @@
   |Linear Algebra|linear algebra|**A+**|
   |Image Processing|Traditional image processing methods|**A+**|
   |Compiler Design|Study of NLP & compiler|A0|
+  
+  - Summer semester
+
+|Class| Abstract| Grade|
+|----|---|---|
+|Bigdata on modern society|Data Analysis using SPSS|**A+**|
