@@ -5,9 +5,9 @@ def partition(a,l,r):
     while True:
         while a[i] < v:
             i += 1
-        while a[j] > v:
+        while a[j] >= v:
             j -= 1
-        if i>=j: break
+        if i >= j: break
         a[i],a[j] = a[j],a[i] # change
     a[i],a[r] = a[r],a[i] # change
     return i
@@ -15,11 +15,11 @@ def partition(a,l,r):
 def quicksort(a,l,r):
     if r>l:
         i = partition(a,l,r)
-        print('p')
+
         quicksort(a,l,i-1) # left
-        print('x')
+
         quicksort(a,i+1,r) # right
-        print('y')
+
     return a
 
 # a = [-1,6,4,2,7,9,3,8,1,10,5]
@@ -28,8 +28,8 @@ def quicksort(a,l,r):
 # print(quicksort(a,l,r))
 
 import time, random
-random.seed(42)
-Number = [5000,10000,15000]
+# random.seed(42)
+Number = [100000,200000,300000]
 for N in Number:
     a = []
 
@@ -41,7 +41,7 @@ for N in Number:
 
     start_time = time.time()
     l = 1
-    quicksort(a, l,len(a)-1)
+    quicksort(a, l,N-1)
 
     end_time = time.time() - start_time
 
