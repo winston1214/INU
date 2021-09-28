@@ -11,27 +11,31 @@ def shellsort(a,n):
         for i in range(h+1,n+1):
             v = a[i]
             j = i
+            
             while (j>h and a[j-h]>v):
                 a[j] = a[j-h]
-                j -= h
+                j -= h   
             a[j] = v
+            print('중간과정 : ',a)            
     return a
+a = [-1,11,15,7,2,8,5,3,1,6,13,14,9,12,10,4]
+shellsort(a,len(a)-1)
 
+def calc_time():
+    Number = [5000,10000,15000]
+    for N in Number:
+        a = []
 
-Number = [5000,10000,15000]
-for N in Number:
-    a = []
+        a.append(None)
 
-    a.append(None)
+        for i in range(N):
 
-    for i in range(N):
+            a.append(random.randint(1, N))
 
-        a.append(random.randint(1, N))
+        start_time = time.time()
 
-    start_time = time.time()
+        shellsort(a, N)
 
-    shellsort(a, N)
+        end_time = time.time() - start_time
 
-    end_time = time.time() - start_time
-
-    print("선택 정렬의 실행 시간 (N=%d) : %0.3f"%(N, end_time))
+        print("쉘 정렬의 실행 시간 (N=%d) : %0.3f"%(N, end_time))

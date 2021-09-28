@@ -3,29 +3,31 @@ def bubblesort(a,n):
         for j in range(1,i):
             if a[j] > a[j+1]:
                 a[j], a[j+1] = a[j+1], a[j]
+        print('중간과정 : ',a)
     return a
 
-# a = [None,3,1,2,4,5]
-# print(bubblesort(a,len(a)-1))
+a = [-1,11,15,7,2,8,5,3,1,6,13,14,9,12,10,4]
+print(bubblesort(a, len(a)-1))
 
-import random, time
+def calc_time():
+    import random, time
 
 
 
-Number = [5000,10000,15000]
-for N in Number:
-    a = []
+    Number = [5000,10000,15000]
+    for N in Number:
+        a = []
 
-    a.append(None)
+        a.append(None)
 
-    for i in range(N):
+        for i in range(N):
 
-        a.append(random.randint(1, N))
+            a.append(random.randint(1, N))
 
-    start_time = time.time()
+        start_time = time.time()
 
-    bubblesort(a, N-1)
+        bubblesort(a, N-1)
 
-    end_time = time.time() - start_time
+        end_time = time.time() - start_time
 
-    print("선택 정렬의 실행 시간 (N=%d) : %0.3f"%(N, end_time))
+        print("선택 정렬의 실행 시간 (N=%d) : %0.3f"%(N, end_time))

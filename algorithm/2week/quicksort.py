@@ -17,32 +17,34 @@ def quicksort(a,l,r):
         i = partition(a,l,r)
 
         quicksort(a,l,i-1) # left
-
+        print('중간과정1 : ',a)
         quicksort(a,i+1,r) # right
+        print('중간과정2 : ',a)
 
     return a
 
-# a = [-1,6,4,2,7,9,3,8,1,10,5]
-# l = 1
-# r = len(a) - 1
-# print(quicksort(a,l,r))
+a = [-1,11,15,7,2,8,5,3,1,6,13,14,9,12,10,4]
+l = 1
+r = len(a) - 1
+quicksort(a,l,r)
 
-import time, random
-# random.seed(42)
-Number = [100000,200000,300000]
-for N in Number:
-    a = []
+def calc_time():
+    import time, random
+    # random.seed(42)
+    Number = [100000,200000,300000]
+    for N in Number:
+        a = []
 
-    a.append(-1)
+        a.append(-1)
 
-    for i in range(N):
+        for i in range(N):
 
-        a.append(random.randint(1, N))
+            a.append(random.randint(1, N))
 
-    start_time = time.time()
-    l = 1
-    quicksort(a, l,N-1)
+        start_time = time.time()
+        l = 1
+        quicksort(a, l,N-1)
 
-    end_time = time.time() - start_time
+        end_time = time.time() - start_time
 
-    print("선택 정렬의 실행 시간 (N=%d) : %0.3f"%(N, end_time))
+        print("선택 정렬의 실행 시간 (N=%d) : %0.3f"%(N, end_time))

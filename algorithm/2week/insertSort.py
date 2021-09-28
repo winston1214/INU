@@ -6,27 +6,29 @@ def insertSort(a,n):
             a[j] = a[j-1]
             j = j-1
         a[j] = v
+        print('중간과정 : ',a)
     return a
 
-# a = [-1, 3,1,2,4,5]
-# print(insertSort(a, len(a)-1))
+a = [-1,11,15,7,2,8,5,3,1,6,13,14,9,12,10,4]
+print(insertSort(a, len(a)-1))
 
-import random, time
+def cal_time():
+    import random, time
 
-Number = [5000,10000,15000]
-for N in Number:
-    a = []
+    Number = [5000,10000,15000]
+    for N in Number:
+        a = []
 
-    a.append(-1)
+        a.append(-1)
 
-    for i in range(N):
+        for i in range(N):
 
-        a.append(random.randint(1, N))
+            a.append(random.randint(1, N))
 
-    start_time = time.time()
+        start_time = time.time()
 
-    insertSort(a, N-1)
+        insertSort(a, N-1)
 
-    end_time = time.time() - start_time
+        end_time = time.time() - start_time
 
-    print("선택 정렬의 실행 시간 (N=%d) : %0.3f"%(N, end_time))
+        print("선택 정렬의 실행 시간 (N=%d) : %0.3f"%(N, end_time))
