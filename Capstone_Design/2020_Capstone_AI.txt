@@ -1,0 +1,49 @@
+지난 캡스톤 수상작 중 인공지능과 관련된 작품들
+
+1. 슈퍼빈
+https://www.inu.ac.kr/user/indexSub.do?codyMenuSeq=2452975&siteId=isis&dum=dum&boardId=630255&page=3&command=view&boardSeq=630317
+YOLO로 Object Detection 수행 + 쓰레기 포화 여부 확인
+
+2. 맘스트롱
+https://www.inu.ac.kr/user/indexSub.do?codyMenuSeq=2452975&siteId=isis&dum=dum&boardId=630255&page=3&command=view&boardSeq=630341
+KeyPoint 추출하여 자세 교정
+
+3. 신약후보물질의 생성모델 개발
+https://www.inu.ac.kr/user/indexSub.do?codyMenuSeq=2452975&siteId=isis&dum=dum&boardId=630255&page=2&command=view&boardSeq=630375
+VAE+RNN 사용. 신약 후보 물질 추출(데이콘 물성예측과 비슷)
+
+4. 알람 AI
+https://www.inu.ac.kr/user/indexSub.do?codyMenuSeq=2452975&siteId=isis&dum=dum&boardId=630255&page=2&command=view&boardSeq=630378
+KeyPoint 추출하여 각도가 정확하게 일치할 때 알람 중지
+
+5. gutenTag
+https://www.inu.ac.kr/user/indexSub.do?codyMenuSeq=2452975&siteId=isis&dum=dum&boardId=630255&page=2&command=view&boardSeq=630411
+태그 기반으로 추천시스템 
+
+6. Meaningful
+https://www.inu.ac.kr/user/indexSub.do?codyMenuSeq=2452975&siteId=isis&dum=dum&boardId=630255&page=2&command=view&boardSeq=630425
+감정분석 하여 컨텐츠 분석 (koBert 쓴 것 같음)
+
+7. 딥러닝 감정분석을 통한 추천 App
+https://www.inu.ac.kr/user/indexSub.do?codyMenuSeq=2452975&siteId=isis&dum=dum&boardId=630255&page=1&command=view&boardSeq=630438
+텍스트 감정 분석 -> 추천까지
+
+8. 암호화폐 자동매매 프로그램
+https://www.inu.ac.kr/user/indexSub.do?codyMenuSeq=2452975&siteId=isis&dum=dum&boardId=630255&page=1&command=view&boardSeq=630444
+알고리즘 트레이딩
+
+9. SANs
+https://www.inu.ac.kr/user/indexSub.do?codyMenuSeq=2452975&siteId=isis&dum=dum&boardId=630255&page=1&command=view&boardSeq=630713
+CycleGAN을 이용하여 음악 스타일 변환(상 못받은 이유 : CycleGAN 오픈 소스이고 Input 만 변경해서 훈련시키면 끝이기 떄문)
+
+10. 마일링
+https://www.inu.ac.kr/user/indexSub.do?codyMenuSeq=2452975&siteId=isis&dum=dum&boardId=630255&page=1&command=view&boardSeq=630720
+챗봇 텍스트 감정분석
+
+11. 이게뭐약
+https://www.inu.ac.kr/user/indexSub.do?codyMenuSeq=2452975&siteId=isis&dum=dum&boardId=630255&page=1&command=view&boardSeq=630726
+약 검색
+
+12. 뉴세컨즈
+https://www.inu.ac.kr/user/indexSub.do?codyMenuSeq=2452975&siteId=isis&dum=dum&boardId=630255&page=1&command=view&boardSeq=630729
+텍스트 자동 요약
