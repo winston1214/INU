@@ -27,7 +27,7 @@ def bubblesort(a,n):
 
 if __name__ == '__main__':
     import random, time
-
+    random.seed(42)
     Number = [5000,10000,15000]
     for N in Number:
         a = []

@@ -22,28 +22,8 @@ def mergeSort(a,l,r):
         mergeSort(a,m+1,r)
         merge(a,l,m,r)
     return a
-# a = [-1,6,4,2,7,9,3,8,1,10,5]
-# l = 1
-# r = len(a) - 1
-# print(mergeSort(a,l,r))
 
-
-import time, random
-# random.seed(42)
-Number = [100000,200000,300000]
-for N in Number:
-    a = []
-
-    a.append(-1)
-
-    for i in range(N):
-
-        a.append(random.randint(1, N))
-
-    start_time = time.time()
-    l = 1
-    mergeSort(a, l ,N)
-
-    end_time = time.time() - start_time
-
-    print("합병 정렬의 실행 시간 (N=%d) : %0.3f"%(N, end_time))
+a = [-1,6,4,2,7,9,3,8,1,10,5]
+l = 1
+r = len(a) - 1
+print(mergeSort(a,l,r))
