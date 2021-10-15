@@ -76,7 +76,8 @@ def investing(opt):
         browser.find_element_by_css_selector('#moreLink').click() # 더보기 클릭
         start = last
         time.sleep(3)
-        print(f'{opt.company} = ~{end} : {last} counts')
+        cnt = sum(df.up_count + df.down_count)
+        print(f'{opt.company} = ~{end} : {cnt} counts')
     df.to_csv(f'{opt.company}_investing.csv',index=False)
     browser.quit()
 if __name__ == '__main__':
