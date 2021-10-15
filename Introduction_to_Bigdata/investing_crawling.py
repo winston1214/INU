@@ -49,23 +49,29 @@ def investing(opt):
     end = END_DATE
     # counting = 0
     df = pd.DataFrame({'date':date_index,'up_count':0,'down_count':0})
+    
 
     while dt.datetime.strptime(end, "%Y-%m-%d") >= st:
 
         matrix = soup.select('#sentiments_table > tbody >tr')
         last += len(matrix)
         for i in range(start,last+1):
-            icon = browser.find_element_by_css_selector(f'#sentiments_table > tbody > tr:nth-child({i}) > td.center')
+           
             today_date = browser.find_element_by_css_selector(f'#sentiments_table > tbody > tr:nth-child({i}) > td.first.left').text.strip()
             today_date = today_date.replace(' ','')
             end = re.sub(korean,'-',today_date)[:-1]
-
+            if dt.datetime.strptime(end, "%Y-%m-%d") >= dt.datetime.strptime(END_DATE,"%Y-%m-%d"):
+                browser.find_element_by_css_selector('#moreLink').click() # 더보기 클릭
+                print('HI')
+                break
+            icon = browser.find_element_by_css_selector(f'#sentiments_table > tbody > tr:nth-child({i}) > td.center')
             try:
                 icon.find_element_by_class_name(down_string)
                 df.loc[df.date == end,'down_count'] += 1
             except:
                 icon.find_element_by_class_name(up_string)
                 df.loc[df.date == end,'up_count'] += 1
+
         time.sleep(3)
         browser.find_element_by_css_selector('#moreLink').click() # 더보기 클릭
         start = last
