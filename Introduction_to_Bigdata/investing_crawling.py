@@ -56,14 +56,15 @@ def investing(opt):
         matrix = soup.select('#sentiments_table > tbody >tr')
         last += len(matrix)
         for i in range(start,last+1):
-           
+            time.sleep(3)
             today_date = browser.find_element_by_css_selector(f'#sentiments_table > tbody > tr:nth-child({i}) > td.first.left').text.strip()
             today_date = today_date.replace(' ','')
             end = re.sub(korean,'-',today_date)[:-1]
-            if dt.datetime.strptime(end, "%Y-%m-%d") >= dt.datetime.strptime(END_DATE,"%Y-%m-%d"):
-                browser.find_element_by_css_selector('#moreLink').click() # 더보기 클릭
-                print('HI')
-                break
+            # if dt.datetime.strptime(end, "%Y-%m-%d") >= dt.datetime.strptime(END_DATE,"%Y-%m-%d"):
+            #     browser.find_element_by_css_selector('#moreLink').click() # 더보기 클릭
+            #     print('HI')
+            #     break
+            
             icon = browser.find_element_by_css_selector(f'#sentiments_table > tbody > tr:nth-child({i}) > td.center')
             try:
                 icon.find_element_by_class_name(down_string)
