@@ -3,13 +3,16 @@ def insertSort(a,n):
         v = a[i]
         j = i
         while (a[j-1] > v):
+            print(f'j = {j}')
             a[j] = a[j-1]
             j = j-1
+            
         a[j] = v
-        print('중간과정 : ',a)
+        print(f'중간과정 {i} : ',a)
     return a
 
-a = [-1,11,15,7,2,8,5,3,1,6,13,14,9,12,10,4]
+# a = [-1,11,15,7,2,8,5,3,1,6,13,14,9,12,10,4]
+a = [-1,3,2,5,1,4]
 print(insertSort(a, len(a)-1))
 
 def cal_time():

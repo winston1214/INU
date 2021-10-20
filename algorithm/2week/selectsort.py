@@ -5,9 +5,10 @@ def selectionSort(a,n):
             if a[minIndex] > a[j]:
                 minIndex = j
         a[minIndex],a[i] = a[i],a[minIndex]
-        print('중간 결과 : ',a)
+        print(f'i = {i} 중간 결과 : ',a)
     return a
-a = [-1,11,15,7,2,8,5,3,1,6,13,14,9,12,10,4]
+# a = [-1,11,15,7,2,8,5,3,1,6,13,14,9,12,10,4]
+a = [-1,3,2,5,1,4]
 print(selectionSort(a,len(a)-1))
 
 def calc_time():
