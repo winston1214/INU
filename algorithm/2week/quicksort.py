@@ -17,20 +17,25 @@ def partition(a,l,r):
     return i
 
 def quicksort(a,l,r):
+    print('here')
     if r>l:
+        print('IN')
         i = partition(a,l,r)
-        print(f'1. l : {l}, r : {r}')
+        # print(f'1. l : {l}, r : {r}')
         quicksort(a,l,i-1) # left
-        print(f'2. l : {l}, r : {r}')
+        # print('1. ',a)
+        # print(f'2. l : {l}, r : {r}')
+        # print(i+1,r) # 6 6
         quicksort(a,i+1,r) # right
-        # print('중간과정2 : ',a)
+        # print('2. ',a)
+        # print(f'3. l : {l}, r : {r}')
 
     return a
 
-a = [-1,11,15,7,2,8,5,3,1]
+a = [-1,6,2,8,1,3,9,4,5,10,7]
 l = 1
 r = len(a) - 1
-quicksort(a,l,r)
+print(quicksort(a,l,r))
 
 def calc_time():
     import time, random
