@@ -21,7 +21,7 @@ if __name__ == '__main__':
     N = np.shape(p)[0]
     K = len(num)
 
-    def apply_rbf_kernel(p1, p2):
+    def apply_rbf_kernel(p1, p2): # function k
         diff = p1 - p2
         dist = np.sum(diff * diff, axis=1)
         exp_tmp = -1.0 * dist * 10.0
@@ -30,36 +30,41 @@ if __name__ == '__main__':
 
     def get_idx_cluster(p, p_cluster,idx_cluster): # 고치기
         num_k = np.shape(p_cluster)[0]
-        idx_cluster = []
         dic = {}
-        
         for i in range(num_k):
             dic[i] = []
             idx_tmp = np.where(idx_cluster == i)
             idx_tmp = idx_tmp[0]
+            
             tmp1 = apply_rbf_kernel(p,p)
             if len(idx_tmp):
                 pi_c = p[idx_tmp,:]
                 nc = len(pi_c)
                 tmp2 = 0
                 for j in range(len(pi_c)):
-                    tmp2 += apply_rbf_kernel(p,np.array([j]))
-                
-                tmp3 = apply_rbf_kernel(pi_c,pi_c)
-                distance = tmp1 - (2/nc * tmp2) + (1/(nc**2))*tmp3
+                    tmp2 += apply_rbf_kernel(p,np.array(pi_c[j]))
+                tmp3 = 0
+                for pi in pi_c:
+                    pi = np.array([pi])
+                    for pj in pi_c:
+                        pj = np.array([pj])
+                        tmp3 += apply_rbf_kernel(pi,pj)                        
+                distance = tmp1 - (2/nc * tmp2) + ((nc**-2) * tmp3)
                 dic[i].append(distance.tolist())
             else:
                 dic[i].append(tmp1.tolist())
-        if len(dic[0]) != len(dic[1]):
-            print('wrong')
+        new_cluster = []
+        
         
         for v in range(len(p)):
-            if dic[0][v] > dic[1][v]:
-                idx_cluster.append(0)
-            else:
-                idx_cluster.append(1)
-        print(idx_cluster)              
-        return idx_cluster
+            minimum = dic[0][0][v]
+            idx = 0
+            for k in range(num_k):
+                if dic[k][0][v] < minimum:
+                    minimum = dic[k][0][v]
+                    idx = k
+            new_cluster.append(idx)
+        return np.array(new_cluster)
 
     def update_p_cluster(p, p_cluster, idx_cluster):
         num_k = np.shape(p_cluster)[0]
