@@ -80,14 +80,34 @@ def encode(t, m):
     huffman_code = ''
     for j in range(m):
         i = length[index(t[j])]
+        
         while i > 0:
             huffman_code += str((code[index(t[j])] >> i - 1) & 1)
             i -= 1
     return huffman_code
 
-# def decode(t,m):
-#     original = ''
-#     for i in range(m):
+def decode(encoding,c,d):
+    search_num = len(d)-1
+    string = ''
+    for i in range(len(encoding)):
+        
+        if encoding[i] == '0':
+            
+            k = d.index(search_num)
+            search_num = k
+        if encoding[i] == '1':
+            k = d.index(-search_num)
+            search_num = k
+
+        if k < 27:
+            if k == 0:
+                k = -32
+            string += chr(k+64)
+            search_num = len(d)-1
+            
+        
+    return string           
+
         
 
         
@@ -99,11 +119,20 @@ length = [0]*27
 code = [0]*27
 M = len(text)
 pq = PQ()
-
 makeHuffman(text, M)
 print(encode(text, M))
-print('count',count[:41+1])
-print('dad',dad[:41+1])
-print('code',code[:M])
-print('length',length[:M])
-print(decode(encode(M),len(encode(M))))
+print('1번')
+print(count[: index(max(text))+1])
+print('----'*20)
+print('2번')
+# print('count[k]',count)
+print('count',count[:index(max(text))*2-2])
+print('dad',dad[:index(max(text))*2-2])
+print('----'*20)
+print('3번')
+print('code',code[:index(max(text))])
+print('length',length[:index(max(text))])
+print('----'*20)
+print('4번')
+print(decode(encode(text,M),count[:42],dad[:42]))
+print('----'*20)

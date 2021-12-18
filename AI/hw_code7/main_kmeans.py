@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
     def get_idx_cluster(p, p_cluster): # 어느부분에 속하는지(군집 번호가 나와야됨)
         idx_cluster = []
-        print(len(p_cluster))
+        
         for i in range(len(p)):
             dis_ls = []
             for j in range(len(p_cluster)):
