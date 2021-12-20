@@ -87,6 +87,9 @@ def encode(t, m):
     return huffman_code
 
 def decode(encoding,c,d):
+    
+    idx = c.index(max(c))
+    d = d[:idx+1]
     search_num = len(d)-1
     string = ''
     for i in range(len(encoding)):
@@ -112,7 +115,7 @@ def decode(encoding,c,d):
 
         
 
-text = 'VISION QUESTION ONION CAPTION GRADUATION EDUCATION'
+text = 'A SIMPLE STRING TO BE ENCODED USING A MINIMAL NUMBER OF BITS'
 count = [0]*100
 dad = [0]*100
 length = [0]*27
@@ -125,14 +128,15 @@ print('1번')
 print(count[: index(max(text))+1])
 print('----'*20)
 print('2번')
-# print('count[k]',count)
-print('count',count[:index(max(text))*2-2])
-print('dad',dad[:index(max(text))*2-2])
+print('count[k]',count)
+print('dad',dad)
+#print('count',count[:index(max(text))])
+#print('dad',dad[:index(max(text))])
 print('----'*20)
 print('3번')
 print('code',code[:index(max(text))])
 print('length',length[:index(max(text))])
 print('----'*20)
 print('4번')
-print(decode(encode(text,M),count[:42],dad[:42]))
+print(decode(encode(text,M),count,dad))
 print('----'*20)
